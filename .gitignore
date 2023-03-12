@@ -3,7 +3,6 @@ poetry.lock
 /.env
 /.venv
 /node_modules
-/package-lock.json
 /next-env.d.ts
 /.next
 /.vscode
