@@ -15,6 +15,8 @@ import {
     CellContext,
 } from "@tanstack/react-table";
 import "bootstrap/dist/css/bootstrap.css";
+import getConfig from "next/config";
+const { publicRuntimeConfig } = getConfig();
 
 interface Reg {
     ["分類"]: string,
@@ -537,7 +539,7 @@ export const IndexPage: React.FC = () => {
 
     React.useEffect(() => {
         (async () => {
-            const rawDataResp = await fetch("/data/reg_list.json");
+            const rawDataResp = await fetch(`${publicRuntimeConfig?.basePath ?? ""}/data/reg_list.json`);
             if (rawDataResp.ok) {
                 const rawData = await rawDataResp.json();
                 const newData: typeof data = [];
@@ -559,7 +561,7 @@ export const IndexPage: React.FC = () => {
 
     React.useEffect(() => {
         (async () => {
-            const rawSchedResp = await fetch("/data/sched.json");
+            const rawSchedResp = await fetch(`${publicRuntimeConfig?.basePath ?? ""}/data/sched.json`);
             if (rawSchedResp.ok) {
                 const rawSched = await rawSchedResp.json();
                 const schedHead: SchedHead = [];
