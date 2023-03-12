@@ -366,6 +366,7 @@ const RegTable: React.FC<{ data: Reg[], sched: Sched }> = (props) => {
                     ))}
                 </select>
             </span>
+            <div>項目数：{table.getFilteredRowModel().rows.length} / {table.getCoreRowModel().rows.length}</div>
             <span>
                 条項リンク先：
                 <select
@@ -381,7 +382,8 @@ const RegTable: React.FC<{ data: Reg[], sched: Sched }> = (props) => {
                     ))}
                 </select>
             </span>
-            <div>項目数：{table.getFilteredRowModel().rows.length} / {table.getCoreRowModel().rows.length}</div>
+            <div><a href="https://github.com/yamachig/scdar-lab" target="_blank" rel="noreferrer">GitHub</a></div>
+            <div><a href="https://www.digital.go.jp/councils/administrative-research/c43e8643-e807-41f3-b929-94fb7054377e/" target="_blank" rel="noreferrer">データ取得元</a></div>
         </div>
 
         <table className="table" style={{ tableLayout: "fixed", fontSize: "0.9em", marginTop: "2em" }}>
@@ -607,9 +609,7 @@ export const IndexPage: React.FC = () => {
                             className="btn-close"
                             data-bs-dismiss="modal"
                             aria-label="Close"
-                        >
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                        />
                     </div>
                     <div className="modal-body" />
                     <div className="modal-footer">
